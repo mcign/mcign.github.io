@@ -1,37 +1,8 @@
-## Welcome to GitHub Pages
+## MCIGN - The Keyless Motorcycle Ignition
 
-You can use the [editor on GitHub](https://github.com/mcign/mcign.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+### What is MCIGN?
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The MCIGN project seamlessly adds a "keyless start" to stock motorcycle ignitions and makes it nearly impossible to hotwire or force the ignition. All modifications are contained in the stock ignition housing, allowing for a stock appearance. The modified ignition communicates with a control app on a smartphone over a BLE connection with an extra layer of encryption to make up for weaknesses in BLE (like limited OOB pairing options on Android). An optional proximity mode can automatically turn the bike on, either in a trusted location such as a garage or wherever the bike was last parked. The original function of the lock mechanism is not altered, and the key works as expected. An optional "digital killswitch" module makes hotwiring nearly impossible by preventing the bike from starting unless it recieves an encrypted command from the modified ignition (most stock motorcycles detect an unlocked ignition by checking the resistance between two wires, and can be hotwired very easily).
 
-### Markdown
+### Current State
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mcign/mcign.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
