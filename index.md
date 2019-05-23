@@ -24,6 +24,12 @@ The hardware is made up of a main PCB that emulates the original switching mecha
 ![switch spacer]()
 Figure 2. A spacer from the original switch mechanism that shows the amount of available space.
 
+![main pcb](https://mcign.github.io/images/main_pcb.png)
+Figure 3. The front and back layouts of the main PCB.
+
+![relay pcb](https://mcign.github.io/images/relay_pcb.png)
+Figure 4. The front and back layouts of the relay PCB.
+
 #### Encryption
 
 Bluetooth pairing is vulnerable to an MITM attack, allowing attackers to steal cryptographic keys and impersonate a legitimate device. Instead of relying on BLE encryption, this project encrypts all commands with [AES-128 and a SHA-256 HMAC](https://github.com/tozny/java-aes-crypto). A unique number is also included with each command to prevent replay attacks.
