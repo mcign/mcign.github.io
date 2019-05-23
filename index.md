@@ -16,12 +16,12 @@ A working prototype has been built and tested on a motorcycle (Honda RC51). The 
 
 #### Hardware
 
-![switch plate]()
+![switch plate](https://mcign.github.io/images/switch_plate.png)
 Figure 1. A plastic plate removed from the original switch mechanism.
 
 The hardware is made up of a main PCB that emulates the original switching mechanism shown in Figure 1, with the MCU and bluetooth radio on the opposite side. The main PCB can support either 2 10A relays, or a Molex SlimStack connector to attach a secondary PCB with up to 5 10A relays. To fit the 13.7mm tall relays in the 15.7mm vertical space of the ignition housing, a 1mm connector and 0.6mm and 0.4mm PCBs are needed. The 1mm connector leaves just enough space for the components on the main PCB (the tallest of which is 0.9mm). All relays are carefully arranged to avoid contact with the lock mechanism, which extends a few milimeters into the center of the space with a radius of 9mm and rotates about 150 degrees. The amount of usable space can be seen in figure 2, which shows a spacer from the original switch mechanism. PCB designs are shown in figures 3, and 4. The layout of the nRF51x and antenna are based on the reference design provided by Nordic Semiconductor.
 
-![switch spacer]()
+![switch spacer](https://mcign.github.io/images/switch_spacer.png)
 Figure 2. A spacer from the original switch mechanism that shows the amount of available space.
 
 ![main pcb](https://mcign.github.io/images/main_pcb.png)
