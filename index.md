@@ -8,6 +8,10 @@ The ignition firmware can store several digital keys (currently 15), and keys ca
 
 Most motorcycle engines are not started with the key, but instead by a button on the right handlebar (for safety, all controls can be reached while the rider's hands are on the handlebars). This project is able to switch the bike "on" in the same way turning the key would, but it can not start the engine. Most motorcycles also have a steering lock in the ignition that locks the handlebars to the side, making theft more dificult. The steering lock is not altered or disabled by this project, but cannot be controlled remotely.
 
+### Safety
+
+Safety is a concern, as the device is capable of shutting off the motorcycle's engine. All components of the current version except for the Molex connector used in the dual-PCB configuration are AEC-qualified, and  A voltage sensor detects when the engine is running, and prevents the proximity feature from automatically shutting off the bike while the engine is running. Similarly, if the bike is unlocked with the proximity feature but loses connection with the smartphone for more than a preconfigured amount of time, it will automatically re-lock (assuming the engine is not running).
+
 ### Current State
 
 A working prototype of the previous version, which used a different MCU and didn't work with the original key, has been built and tested on a motorcycle (Honda RC51). The smartphone app uses Ionic framework and Cordova, and currently supports Android with iOS support nearly done. Battery consumption is acceptable (uses ~15%/day on a Galaxy S9), and there are plans to further reduce battery consumption. An automotive-grade version of the hardware with support for the original key has been designed, but the firmware still needs to be ported to the new MCU (from BGM111 to nRF51824).
@@ -16,7 +20,7 @@ Development on the "digital killswitch" has not yet begun. It's planned to use a
 
 ### Open Source
 
-This project is freely available, and design files (source code, schematic, layout) for the tested prototype are available at the github repositories listed below. All files are released under the GPLv3, and contributions are appreciated. To contribute, or to make a comment or a feature request, please make a github account and [create an issue](https://help.github.com/en/articles/creating-an-issue) in the repective repository.
+This project is freely available, and design files (source code, schematic, layout) for the tested prototype (previous version) are available at the github repositories listed below. All files are released under the GPLv3, and contributions are appreciated. To contribute, or to make a comment or a feature request, please make a github account and [create an issue](https://help.github.com/en/articles/creating-an-issue) in the repective repository.
 
 #### Project Repositories
  * [Smartphone App](https://github.com/mcign/app)
@@ -61,3 +65,16 @@ Bluetooth pairing is vulnerable to an MITM attack, allowing attackers to steal c
 The proximity feature is implemented in the smartphone app, which sends commands to switch the ignition on or off. To avoid excessive battery consumption, the smartphone app monitors for an iBeacon advertisement which is broadcast from the ignition before attempting to get a proximity measurement. There are also plans to use geolocation and activity recognition to further reduce battery consumption, by keeping track of where the motorcycle was parked and disabling beacon scanning while out of range, and disabling beacon scanning unless the device detects that the user is "walking" (with activity recognition).
 
 Bluetooth is vulnerable to relay attacks, where two wireless devices are tricked into thinking they're much closer to eachother than they really are. The "keyless start" proximity mode is vulnerable to this attack, [which has also been used to steal luxury cars](https://electrek.co/2018/07/31/tesla-theft-tips-help-prevent-relay-attacks/). The only reliable method to detect a relay attack is to analyze the connection latency, but BLE latency is so much higher than other protocols (such as WiFi) that the extra latency would be nearly impossible to detect. However, a relay attack is much more dificult than hotwiring a motorcycle the traditional way, so this isn't considered a significant disadvantage. It is always recommended to use additional forms of physical security (lock & chain, alarm, etc) when parking a motorcycle in a dangerous area, whether using a stock ignition or a wireless ignition with Bluetooth proximity.
+
+### Planned Features
+
+ * Digital killswitch module
+ * Start button override to start the engine with the app (eg. to warm up a bike in a cold climate)
+ * Reduce BLE proximity mode with geolocation and activity recognition (scanning is disabled unless the smartphone detects you're walking and are relatively close to where the bike was last parked)
+ * GPS & cellular chip for tracking and remote control
+ * Motion-sensitive alarm (using stock horn or custom siren)
+ * RPM sensor
+ * Temperature sensors (oil, coolant, ambient)
+ * Detect phone mount (with RFID tag), start navigation app
+ * Smartphone app integration with bluetooth headsets (Sena, Domio, etc)
+ * auto-start music player and/or Waze
