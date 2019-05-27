@@ -10,7 +10,7 @@ Most motorcycle engines are not started with the key, but instead by a button on
 
 ### Safety
 
-Safety is a concern, as the device is capable of shutting off the motorcycle's engine. All components of the current version except for the Molex connector used in the dual-PCB configuration are AEC-qualified, and  A voltage sensor detects when the engine is running, and prevents the proximity feature from automatically shutting off the bike while the engine is running. Similarly, if the bike is unlocked with the proximity feature but loses connection with the smartphone for more than a preconfigured amount of time, it will automatically re-lock (assuming the engine is not running).
+Safety is a concern, as the device is capable of shutting off the motorcycle's engine. All components of the current version except for the Molex connector used in the dual-PCB configuration are AEC-qualified. A voltage sensor detects when the engine is running and prevents the proximity feature from automatically shutting off the bike while the engine is running. Similarly, if the bike is unlocked with the proximity feature but loses connection with the smartphone for more than a preconfigured amount of time it will automatically re-lock (assuming the engine is not running).
 
 ### Current State
 
